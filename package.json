@@ -10,7 +10,7 @@
     "cleanold": "rd dist-server /S /Q & mkdir dist-server",
     "tsc": "tsc -p tsconfig.json",
     "tscw": "tsc --watch -p tsconfig.json",
-    "test": "mocha -R spec **/*.spec.js --reporter min --inline-diffs",
+    "test": "mocha --reporter min --inline-diffs dist-server/**/*.spec.js",
     "test-watch": "npm run test -- -w"
   },
   "dependencies": {
