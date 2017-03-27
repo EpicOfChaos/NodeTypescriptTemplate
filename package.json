@@ -6,10 +6,11 @@
     "start": "node dist-server/bin/index.js",
     "start:dev": "nodemon --delay 1 dist-server/bin/index.js",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "clean": "rd dist-server /S /Q & mkdir dist-server",
+    "clean": "rimraf dist-server/**",
+    "cleanold": "rd dist-server /S /Q & mkdir dist-server",
     "tsc": "tsc -p tsconfig.json",
     "tscw": "tsc --watch -p tsconfig.json",
-    "test": "mocha -R spec '**/*.spec.js' --reporter min --inline-diffs",
+    "test": "mocha -R spec **/*.spec.js --reporter min --inline-diffs",
     "test-watch": "npm run test -- -w"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "chai-as-promised": "^6.0.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.9.0",
     "typescript": "^2.2.1"

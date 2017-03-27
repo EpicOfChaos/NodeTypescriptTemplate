@@ -4,7 +4,7 @@ import {injectable} from 'inversify'
 export class TestService {
 
     health(){
-        return "Ok really working"
+        return "OK"
     }
 
     prime(n: number) {
